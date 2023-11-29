@@ -1,0 +1,198 @@
+import java.util.Scanner; 
+public class App {
+    public static void main(String[] args) throws Exception {
+        System.out.println("Welcome");
+        double finalPrice = 0;
+        int entree = 0;
+        double side = 0;
+        int dessert = 0;
+        int drink = 0;
+        double tax = .0785;
+        double tip = .175;
+        double ePrice = 0;
+        double sPrice = 0;
+        double desPrice = 0;
+        double drPrice = 0;
+        String ent = "";
+        String sid = "";
+        String des = "";
+        String dri = "";
+        double total = 0;
+
+        Scanner scanner = new Scanner(System.in); 
+        System.out.println("What entree? (0 for none, 1 for enchilada, 2 for burrito, 3 for quesadilla)");
+            entree = scanner.nextInt();
+            while(true)
+            {
+               if(entree == 0 || entree == 1 || entree == 2 || entree == 3)
+                {
+                    break;
+                } 
+                if(entree != 0 || entree != 1 || entree !=2 || entree != 3)
+                {
+                    System.out.println("Invalid: Try again");
+                    System.out.println("What entree? (0 for none, 1 for enchilada, 2 for burrito, 3 for quesadilla)");
+                    
+                   
+                }
+                
+                entree = scanner.nextInt();
+            }
+
+        if(entree == 0)
+        {
+            finalPrice = finalPrice;
+        }
+        if(entree == 1)
+        {
+            finalPrice += 12.75;
+            ePrice += 12.75;
+            ent = "enchilada";
+        }
+        if(entree == 2)
+        {
+            finalPrice += 10.50;
+            ePrice += 10.50;
+            ent = "burrito";
+        }
+        if(entree == 3)
+        {
+            finalPrice += 8.25;
+            ePrice += 8.25;
+            ent = "quesadilla";
+        }
+
+        System.out.println("What side? (0 for none, 1 for beans, 2 for rice, 3 for tortilla)");
+        side = scanner.nextInt();
+        while(true)
+            {
+               if(side == 0 || side == 1 || side == 2 || side == 3)
+                {
+                    break;
+                } 
+                if(side != 0 || side != 1 || side !=2 || side != 3)
+                {
+                    System.out.println("Invalid: Try again");
+                    System.out.println("What side? (0 for none, 1 for beans, 2 for rice, 3 for tortilla)");
+                   
+                }
+                side = scanner.nextInt();
+            }
+        if(side == 0)
+        {
+            finalPrice = finalPrice;
+        }
+        if(side == 1)
+        {
+            finalPrice += 2.00;
+            sPrice += 2.00;
+            sid = "beans";
+        }
+        if(side == 2)
+        {
+            finalPrice += 1.75;
+            sPrice += 1.75;
+            sid = "rice";
+        }
+        if(side == 3)
+        {
+            finalPrice += 1.00;
+            sPrice += 1.00;
+            sid = "tortilla";
+        }
+
+        System.out.println("What dessert? (0 for none, 1 for sopapillas, 2 for churro, 3 for tres leches cake)");
+        dessert = scanner.nextInt();
+        while(true)
+            {
+               if(dessert == 0 || dessert == 1 || dessert == 2 || dessert == 3)
+                {
+                    break;
+                } 
+                if(dessert != 0 || dessert != 1 || dessert !=2 || dessert != 3)
+                {
+                    System.out.println("Invalid: Try again");
+                    System.out.println("What dessert? (0 for none, 1 for sopapillas, 2 for churro, 3 for tres leches cake)");
+                   
+                }
+                dessert = scanner.nextInt();
+            }
+        if(dessert == 0)
+        {
+            finalPrice = finalPrice;
+        }
+        if(dessert == 1)
+        {
+            finalPrice += 5.00;
+            desPrice += 5.00;
+            des = "sopapillas";
+        }
+        if(dessert == 2)
+        {
+            finalPrice += 5.75;
+            desPrice += 5.75;
+            des = "churro";
+        }
+        if(dessert == 3)
+        {
+            finalPrice += 6.50;
+            desPrice += 6.50;
+            des = "tres leches cake";
+        }
+
+        System.out.println("What drink? (0 for none, 1 for coffee, 2 for Ice Tea, 3 soda)");
+        drink = scanner.nextInt();
+        while(true)
+        {
+           if(drink == 0 || drink == 1 || drink == 2 || drink == 3)
+            {
+                break;
+            } 
+            if(drink != 0 || drink != 1 || drink !=2 || drink != 3)
+            {
+                System.out.println("Invalid: Try again");
+                System.out.println("What drink? (0 for none, 1 for coffee, 2 for Ice Tea, 3 soda)");
+               
+            }
+            drink = scanner.nextInt();
+        }
+        
+        if(drink == 0)
+        {
+            finalPrice = finalPrice;
+        }
+        if(drink == 1)
+        {
+            finalPrice += 4.50;
+            drPrice += 4.50;
+            dri = "coffee";
+        }
+        if(drink == 2)
+        {
+            finalPrice += 2.75;
+            drPrice += 2.75;
+            dri = "Ice Tea";
+        }
+        if(drink == 3)
+        {
+            finalPrice += 2.25;
+            drPrice += 2.25;
+            dri = "soda";
+        }
+
+
+        tax = tax*finalPrice;
+        tip = tip*finalPrice;
+        tax = (Math.floor(tax*100))/100;
+        tip = (Math.floor(tip*100))/100;
+        total = finalPrice + tax + tip;
+        System.out.println(ent + ":" + " $" + ePrice);
+        System.out.println(sid + ":" + " $" + sPrice);
+        System.out.println(des + ":" + " $" + desPrice);
+        System.out.println(dri + ":" + " $" + drPrice);
+        System.out.println("Subtotal:" + " $" + finalPrice);
+        System.out.println("tax:" + " $" + tax);
+        System.out.println("tip:" + " $" + tip);
+        System.out.println("Grand Total:" + " $" + total);
+    }
+}
